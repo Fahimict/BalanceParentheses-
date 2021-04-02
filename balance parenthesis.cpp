@@ -5,7 +5,7 @@ int main()
 {
     string str;
     cin>>str;
-    cout<<str;
+  
     stack<char>s;
     int l=str.size();
     int i;

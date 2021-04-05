@@ -1,10 +1,12 @@
 #include<bits/stdc++.h>
+//#include<cstdio>
+//#include<cstring>
 using namespace std;
 int main()
 {
     string str;
+    cout<<"Enter a sequence of parentheses: ";
     cin>>str;
-  
     stack<char>s;
     int l=str.size();
     int i;
@@ -13,11 +15,11 @@ int main()
     {
         if(str[i]=='('||str[i]=='{'||str[i]=='[')
             s.push(str[i]);
-        else if(str[i]==')'&&s.top()=='(')
+        else if(!s.empty()&&str[i]==')'&&s.top()=='(')
             s.pop();
-        else if(str[i]=='}'&&s.top()=='{')
+        else if(!s.empty()&&str[i]=='}'&&s.top()=='{')
             s.pop();
-        else if(str[i]==']'&&s.top()=='[')
+        else if(!s.empty()&&str[i]==']'&&s.top()=='[')
             s.pop();
         else
             s.push(str[i]);
